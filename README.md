@@ -1,5 +1,5 @@
 # Loom
-** Yet another network manager for GNU/Linux **
+**Yet another network manager for GNU/Linux**
 
 ### About
 Loom is a network manager easy to use via it's
@@ -14,3 +14,6 @@ More or less this a playground to learn and work with the
 library, especially with the included object system
 [GObject](https://developer.gnome.org/gobject/stable/index.html), and the
 [GNU Autotools](http://en.wikipedia.org/wiki/GNU_build_system).
+
+### Caveats
+This software is under heavy development.
