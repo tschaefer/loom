@@ -1,0 +1,100 @@
+#
+# Copyright (C) 2014 Tobias Schäfer <tschaefer@blackox.org>.
+#
+# Loom is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# Loom is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with Loom.  If not, see <http://www.gnu.org/licenses/>.
+
+dbus_built_sources = loom-generated.h loom-generated.c
+
+loom-generated.h: loom-generated.c
+loom-generated.c: Makefile.am $(top_srcdir)/src/daemon/org.blackox.Loom.xml
+	$(AM_V_GEN) gdbus-codegen \
+		--interface-prefix org.blackox.Loom. \
+		--c-namespace Loom \
+		--c-generate-object-manager \
+		--generate-c-code loom-generated \
+		--generate-docbook loom-generated-doc \
+		$(top_srcdir)/src/daemon/org.blackox.Loom.xml \
+		$(NULL)
+BUILT_SOURCES += $(dbus_built_sources)
+CLEANFILES += loom-generated*
+
+noinst_LIBRARIES += libloomd.a
+
+nodist_libloomd_a_SOURCES = \
+	$(dbus_built_sources) \
+	$(NULL)
+libloomd_a_SOURCES = \
+	src/daemon/types.h \
+	src/daemon/daemon.h \
+	src/daemon/daemon.c \
+	src/daemon/interfaces.h \
+	src/daemon/interfaces.c \
+	src/daemon/interface.h \
+	src/daemon/interface.c \
+	src/daemon/settings.h \
+	src/daemon/settings.c \
+	src/daemon/setting.h \
+	src/daemon/setting.c \
+	src/daemon/connections.h \
+	src/daemon/connections.c \
+	src/daemon/connection.h \
+	src/daemon/connection.c \
+	src/daemon/tools.h \
+	src/daemon/tools.c \
+	$(NULL)
+
+libloomd_a_CFLAGS = \
+	-I$(top_srcdir)/src/extra \
+	-DG_LOG_DOMAIN=\"loomd-daemon\" \
+	$(LOOM_CFLAGS) \
+	$(NULL)
+
+libexec_PROGRAMS += loomd
+
+loomd_SOURCES = \
+	src/daemon/main.c \
+	$(NULL)
+
+loomd_CFLAGS = \
+	-I$(top_srcdir)/src/daemon \
+	-DG_LOG_DOMAIN=\"loomd-daemon\" \
+	-DLOOM_LOCALEDIR=\""$(localedir)"\" \
+	$(LOOM_CFLAGS) \
+	$(NULL)
+
+loomd_LDADD = \
+	libloomd.a \
+	$(LOOM_LIBS) \
+	$(NULL)
+
+dbusservice_DATA = org.blackox.Loom.service
+
+org.blackox.Loom.service: src/daemon/org.blackox.Loom.service.in Makefile.am
+	$(AM_V_GEN) $(SED_SUBST) $< > $@
+
+dbussystemconf_DATA = org.blackox.Loom.conf
+
+org.blackox.Loom.conf: src/daemon/org.blackox.Loom.conf Makefile.am
+	$(AM_V_GEN) $(SED_SUBST) $< > $@
+
+EXTRA_DIST += \
+	src/daemon/org.blackox.Loom.xml \
+	src/daemon/org.blackox.Loom.service.in \
+	src/daemon/org.blackox.Loom.conf \
+	$(NULL)
+
+CLEANFILES += \
+	org.blackox.Loom.service \
+	org.blackox.Loom.conf \
+	$(NULL)

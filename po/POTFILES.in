@@ -1,0 +1,8 @@
+src/daemon/main.c
+src/daemon/interfaces.c
+src/daemon/interface.c
+src/daemon/settings.c
+src/daemon/setting.c
+src/daemon/connections.c
+src/daemon/connection.c
+src/daemon/tools.c

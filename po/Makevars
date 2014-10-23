@@ -1,0 +1,7 @@
+DOMAIN = loom
+XGETTEXT_OPTIONS = --keyword=_ --keyword=N_ --keyword=P_ --keyword=C_
+COPYRIGHT_HOLDER = Tobias Schäfer
+MSGID_BUGS_ADDRESS = https://github.com/tschaefer/loom/issues
+EXTRA_LOCALE_CATEGORIES =
+
+top_builddir = ..

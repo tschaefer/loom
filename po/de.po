@@ -1,0 +1,153 @@
+# German translation for loom.
+# Copyright (C) 2014 Tobias Schäfer
+# This file is distributed under the same license as the loom package.
+# Tobias Schäfer <Tobias.Schaefer@blackox.org>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: loom 2014.09\n"
+"Report-Msgid-Bugs-To: https://github.com/tschaefer/loom/issues\n"
+"POT-Creation-Date: 2014-10-23 09:45+0200\n"
+"PO-Revision-Date: 2014-10-21 10:55+0200\n"
+"Last-Translator: Tobias Schäfer <Tobias.Schaefer@blackox.org>\n"
+"Language-Team: Deutsch <Tobias.Schaefer@blackox.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/daemon/main.c:49
+msgid "Failed to connect to the message bus."
+msgstr "Verbindung zum Nachrichtenbus fehlgeschlagen."
+
+#: src/daemon/main.c:51
+#, c-format
+msgid "Lost the name %s on the message bus."
+msgstr "Verbindungsname %s zum Nachrichtenbus verloren."
+
+#: src/daemon/main.c:53
+#, c-format
+msgid "Failed to acquire the name %s on the message bus"
+msgstr "Akquirieren des Verbindungsnamen %s am Nachrichtenbus fehlgeschlagen."
+
+#: src/daemon/main.c:63
+#, c-format
+msgid "Acquired the name %s on the message bus."
+msgstr "Verbindungsname %s am Nachrichtenbus akquiriert."
+
+#: src/daemon/main.c:69
+msgid "Caught SIGINT. Initiating shutdown."
+msgstr "SIGINT erhalten. Beginne Abschaltung."
+
+#: src/daemon/main.c:100
+#, c-format
+msgid "loom daemon version %s starting"
+msgstr "Loom Dienst Version %s startet"
+
+#: src/daemon/interfaces.c:126
+msgid "Error getting link cache from kernel."
+msgstr "Fehler beim Erhalt des Link Puffers vom Kernel."
+
+#: src/daemon/interface.c:192 src/daemon/interface.c:227
+#: src/daemon/interface.c:368 src/daemon/interface.c:396
+#: src/daemon/interface.c:426 src/daemon/interface.c:461
+msgid "Error getting link info from kernel."
+msgstr "Fehler beim Erhalt von Link Inormationen vom Kernel."
+
+#: src/daemon/settings.c:185
+#, c-format
+msgid "'%s' entry must contain a valid IPv4 address"
+msgstr "'%s' Eintrag muss eine gülige IPv4 Addresse beinhalten"
+
+#: src/daemon/settings.c:195 src/daemon/settings.c:204
+#, c-format
+msgid "'%s' entry must contain a valid IPv4 suffix"
+msgstr "'%s' Eintrag muss einen gültigen IPv4 Suffix beinhalten"
+
+#: src/daemon/settings.c:218
+#, c-format
+msgid "'%s' entry must be a valid IPv4 address"
+msgstr "'%s' Eintrag muss eine gültige IPv4 Addresse sein"
+
+#: src/daemon/settings.c:239
+#, c-format
+msgid "'%s' entry must contain a valid domain name"
+msgstr "'%s' Eintrag muss einen gültigen Domänennamen beinhalten"
+
+#: src/daemon/settings.c:265
+msgid "'address' entry must be a string"
+msgstr "'address' Eintrag muss eine Zeichenkette sein"
+
+#: src/daemon/settings.c:279
+msgid "'address' entry is required"
+msgstr "'adress' Eintrag wird benötigt"
+
+#: src/daemon/settings.c:291
+msgid "'router' entry must be a string"
+msgstr "'router' Eintrag muss eine Zeichenkette sein"
+
+#: src/daemon/settings.c:310
+msgid "'nameservers' entry must be a string array"
+msgstr "'namenservers' Eintrag muss eine Liste von Wörtern sein"
+
+#: src/daemon/settings.c:334
+msgid "'domain' entry must be a string"
+msgstr "'domains' Eintrag muss eine Liste von Wörtern sein"
+
+#: src/daemon/settings.c:353
+msgid "'searches' entry must be a string array"
+msgstr "'searches' Eintrag muss eine Liste von Wörtern sein"
+
+#: src/daemon/settings.c:440 src/daemon/connections.c:278
+msgid "no such 'setting' object found"
+msgstr "Kein solches 'setting' Objekt gefunden"
+
+#: src/daemon/settings.c:454
+msgid "'setting' object is in use"
+msgstr "'setting' Objekt ist in Benutzung"
+
+#: src/daemon/connections.c:270
+msgid "no such 'interface' object found"
+msgstr "Kein solches 'interface' Objekt gefunden"
+
+#: src/daemon/connections.c:298
+msgid "'connection' object already exists"
+msgstr "'connection' Objekt besteht bereits"
+
+#: src/daemon/connections.c:336 src/daemon/connections.c:390
+#: src/daemon/connections.c:465
+msgid "no such 'connection' object found"
+msgstr "Kein solches 'connection' Objekt gefunden"
+
+#: src/daemon/connections.c:350
+msgid "'connection' object is active"
+msgstr "'connection' Objekt ist aktiv"
+
+#: src/daemon/connections.c:410
+msgid "'connection' object already in use"
+msgstr "'connection' Objekt wird bereits benutzt"
+
+#: src/daemon/connections.c:418
+msgid "'interface' object already in use"
+msgstr "'interface' Objekt wird bereits benutzt"
+
+#: src/daemon/connections.c:493
+msgid "no 'connection' objects active"
+msgstr "Keine 'connection' Objekte aktiv"
+
+#: src/daemon/connections.c:502
+msgid "'connection' object is not active"
+msgstr "'connection' Objekt ist nicht aktiv"
+
+#: src/daemon/tools.c:55
+msgid "Failed to add default route."
+msgstr "Setzen Standardroute fehlgeschlagen."
+
+#: src/daemon/tools.c:86
+msgid "Failed to delete default route."
+msgstr "Löschen Standardroute fehlgeschlagen."
+
+#: src/daemon/tools.c:108
+#, c-format
+msgid "# Created by Loom: %s\n"
+msgstr "# Erstellt durch Loom: %s\n"

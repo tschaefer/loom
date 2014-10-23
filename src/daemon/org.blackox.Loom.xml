@@ -1,0 +1,179 @@
+<!DOCTYPE node PUBLIC
+"-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+
+  <!--
+  This file is part of Loom.
+
+  Copyright (C) 2014 Tobias Schäfer <tschaefer@blackox.org>.
+
+  Loom is free software: you can redistribute it and*or modify
+  it under the terms of the GNU Lesser General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Loom is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with Loom.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+  <!--
+    org.backox.Loom.Interfaces:
+    @short_description: Listing interfaces.
+
+    Interface for top-level interfaces singelton object
+    <literal>/org/blackox/Loom/Interfaces</literal>.
+  -->
+  <interface name="org.blackox.Loom.Interfaces">
+    <!-- Interfaces: Available network interfaces.  -->
+    <property name="Interfaces" type="ao" access="read"/>
+    <!-- ActiveInterfaces: Current network interfaces in use. -->
+    <property name="ActiveInterfaces" type="ao" access="read"/>
+  </interface>
+
+  <!--
+    org.blackox.Loom.Interface:
+    @short_description: Information about interface.
+
+    Interface for interface objects
+    <literal>/org/blackox/Loom/Interface</literal>.
+  -->
+  <interface name="org.blackox.Loom.Interface">
+    <!-- Address: Hardware address currently assigned to interface. -->
+    <property name="Address" type="s" access="read"/>
+    <!-- State: Indicates the administrative interface state. -->
+    <property name="State" type="b" access="read"/>
+    <!-- Carrier: Indicates the current physical link state of the interface. -->
+    <property name="Carrier" type="b" access="read"/>
+    <!--
+      Changed:
+      A signal that is emitted when the interface properties changed.
+      e.g. A connection is applied.
+    -->
+    <signal name="Changed"/>
+  </interface>
+
+  <!--
+    org.blackox.Loom.Settings
+    @short_description: Managing settings.
+
+    Interface for top-level settings singelton object
+    <literal>/org/blackox/Loom/Settings</literal>.
+  -->
+  <interface name="org.blackox.Loom.Settings">
+    <!-- Settings: Available setting configurations.  -->
+    <property name="Settings" type="ao" access="read"/>
+    <!-- ActiveSettings: Current settings in use. -->
+    <property name="ActiveSettings" type="ao" access="read"/>
+    <!--
+      Create:
+      Create a new setting configuration.
+      @configuration: Dictionary mapping strings to variants.
+
+      Returns the new created setting object-path.
+    -->
+    <method name="Create">
+      <arg name="configuration" type="a{sv}" direction="in"/>
+      <arg name="setting" type="o" direction="out"/>
+    </method>
+    <!--
+      Destroy:
+      Destroy a setting configuration.
+      @configuration: Setting object-path.
+    -->
+    <method name="Destroy">
+      <arg name="setting" type="o" direction="in"/>
+    </method>
+  </interface>
+
+  <!--
+    org.blackox.Loom.Setting
+    @short_description: Information about setting configuration.
+
+    Interface for setting objects
+    <literal>/org/blackox/Loom/Setting</literal>.
+  -->
+  <interface name="org.blackox.Loom.Setting">
+    <!-- Address: IPv4 address w/o suffix length.  -->
+    <property name="Address" type="s" access="read"/>
+    <!-- Router: IPv4 address of next hop. -->
+    <property name="Router" type="s" access="read"/>
+    <!-- NameServers: Name server IPv4 addresses. -->
+    <property name="NameServers" type="as" access="read"/>
+    <!-- Domain: Local domain name. -->
+    <property name="Domain" type="s" access="read"/>
+    <!-- Searches: Search list for host-name lookup. -->
+    <property name="Searches" type="as" access="read"/>
+  </interface>
+
+  <!--
+    org.blackox.Loom.Connections
+    @short_description: Managing connections.
+
+    Interface for top-level connections singelton object
+    <literal>/org/blackox/Loom/Connections</literal>.
+  -->
+  <interface name="org.blackox.Loom.Connections">
+    <!-- Connections: Available conections. -->
+    <property name="Connections" type="ao" access="read"/>
+    <!-- ActiveConnections: Current connections in use.  -->
+    <property name="ActiveConnections" type="ao" access="read"/>
+    <!--
+      Create:
+      Create a new connection.
+      @interface: Interface object-path.
+      @setting: Setting object-path.
+
+      Return new created connection object-path.
+    -->
+    <method name="Create">
+      <arg name="interface" type="o" direction="in"/>
+      <arg name="setting" type="o" direction="in"/>
+      <arg name="connection" type="o" direction="out"/>
+    </method>
+    <!--
+      Destroy:
+      Destroy a connection.
+      @connection: Connection object-path.
+    -->
+    <method name="Destroy">
+      <arg name="connection" type="o" direction="in"/>
+    </method>
+    <!--
+      Add:
+      Add connection setting configuration to interface.
+      @connection: Connection object-path.
+    -->
+    <method name="Add">
+      <arg name="connection" type="o" direction="in"/>
+    </method>
+    <!--
+      Delete:
+      Delete connection setting configuration from interface.
+      @connection: Connection object-path.
+    -->
+    <method name="Delete">
+      <arg name="connection" type="o" direction="in"/>
+    </method>
+  </interface>
+
+  <!--
+    org.blackox.Loom.Connection
+    @short_description: Information about connection.
+
+    Interface for connection objects
+    <literal>/org/blackox/Loom/Connection</literal>.
+  -->
+  <interface name="org.blackox.Loom.Connection">
+    <!-- Interface: Interface to use. -->
+    <property name="Interface" type="o" access="read"/>
+    <!-- Setting: Setting configuration to apply -->
+    <property name="Setting" type="o" access="read"/>
+  </interface>
+
+</node>

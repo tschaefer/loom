@@ -1,0 +1,89 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# http://www.gnu.org/software/automake
+
+Makefile.in
+
+# # http://www.gnu.org/software/autoconf
+
+/autom4te.cache
+/aclocal.m4
+/compile
+/configure
+/depcomp
+/install-sh
+/missing
+/stamp-h1
+
+# Enhanced autotools stuff
+
+/Makefile
+/config.h
+/config.h.in
+/config.h.in~
+/config.log
+/config.status
+/.deps
+/valgrind-suppressions
+/loomd
+/loom-generated.c
+/loom-generated.h
+/loom-generated-doc-org.blackox.Loom.Connection.xml
+/loom-generated-doc-org.blackox.Loom.Connections.xml
+/loom-generated-doc-org.blackox.Loom.Interface.xml
+/loom-generated-doc-org.blackox.Loom.Interfaces.xml
+/loom-generated-doc-org.blackox.Loom.Setting.xml
+/loom-generated-doc-org.blackox.Loom.Settings.xml
+/ABOUT-NLS
+/config.guess
+/config.rpath
+/config.sub
+/po/Makefile
+/po/Makefile.in.in
+/po/Makevars.template
+/po/POTFILES
+/po/Rules-quot
+/po/boldquot.sed
+/po/en@boldquot.header
+/po/en@quot.header
+/po/insert-header.sin
+/po/quot.sed
+/po/remove-potcdate.sin
+/po/loom.pot
+/po/remove-potcdate.sed
+/po/stamp-po
+/org.blackox.Loom.conf
+/org.blackox.Loom.service
+po/de.gmo
+/gtk-doc.make
+doc/reference/loom/Makefile
+/m4
+po/*~

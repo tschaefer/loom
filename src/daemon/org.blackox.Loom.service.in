@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=org.blackox.Loom
+Exec=@libexecdir@/loomd
+User=root
