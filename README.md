@@ -1,4 +1,7 @@
 # Loom
+
+[![Build Status](https://travis-ci.org/tschaefer/loom.svg)](https://travis-ci.org/tschaefer/loom)
+
 **Yet another network manager for GNU/Linux**
 
 ### About
