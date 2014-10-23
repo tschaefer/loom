@@ -101,7 +101,13 @@ main (int argc,
 
   loop = g_main_loop_new (NULL, FALSE);
 
-  name_owner_id = g_bus_own_name (G_BUS_TYPE_SESSION,
+#ifdef LOOM_DEBUG
+  GBusType bus_type = G_BUS_TYPE_SESSION;
+#else
+  GBusType bus_type = G_BUS_TYPE_SYSTEM;
+#endif
+
+  name_owner_id = g_bus_own_name (bus_type,
                                   "org.blackox.Loom",
                                   G_BUS_NAME_OWNER_FLAGS_NONE,
                                   on_bus_acquired,
