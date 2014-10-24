@@ -4,11 +4,16 @@ compiler:
 
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install libtool gtk-doc-tools libdbus-1-dev uuid-dev
-  - sudo apt-get install pkg-config automake autotools-dev autopoint
+  - sudo apt-get install -y libtool gtk-doc-tools libdbus-1-dev uuid-dev
+  - sudo apt-get install -y pkg-config automake autotools-dev autopoint
   - git clone https://github.com/GNOME/glib.git
-  - cd glib && ./configure --prefix /usr/local && make && sudo make install && cd
+  - cd glib 
+  - sh autogen.sh && ./configure --prefix /usr/local
+  _ make && sudo make install
+  - cd
   - git clone https://github.com/thom311/libnl.git
-  - cd libnl && ./configure --prefix /usr/local && make && sudo make install && cd
+  - cd libnl 
+  - sh autogen.sh && ./configure --prefix /usr/local
+  - make && sudo make install
 
 script: ./autogen.sh && make
