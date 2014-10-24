@@ -99,7 +99,7 @@ if test "$enable_debug" != "no"; then
 fi
 if test "$enable_debug" = "yes"; then
   CFLAGS="$CFLAGS -O0"
-  AC_DEFINE([LOOM_DEBUG], [1], [Define if debug is enabled])
+  AC_DEFINE([LOOM_DEBUG], [1], [Define to 1 if debugging is enabled])
   debug_msg="yes"
 elif test "$enable_debug" = "no"; then
   CFLAGS="$CFLAGS -O2"
@@ -128,6 +128,7 @@ AC_CONFIG_FILES([
   Makefile
   po/Makefile.in
   doc/reference/loom/Makefile
+  doc/reference/loom/version.xml
 ])
 
 AC_OUTPUT
