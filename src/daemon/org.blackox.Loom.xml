@@ -23,9 +23,8 @@
   -->
 
   <!--
-    org.backox.Loom.Interfaces:
+    org.blackox.Loom.Interfaces:
     @short_description: Listing interfaces.
-
     Interface for top-level interfaces singelton object
     <literal>/org/blackox/Loom/Interfaces</literal>.
   -->
@@ -39,7 +38,6 @@
   <!--
     org.blackox.Loom.Interface:
     @short_description: Information about interface.
-
     Interface for interface objects
     <literal>/org/blackox/Loom/Interface</literal>.
   -->
@@ -59,9 +57,8 @@
   </interface>
 
   <!--
-    org.blackox.Loom.Settings
+    org.blackox.Loom.Settings:
     @short_description: Managing settings.
-
     Interface for top-level settings singelton object
     <literal>/org/blackox/Loom/Settings</literal>.
   -->
@@ -74,7 +71,6 @@
       Create:
       Create a new setting configuration.
       @configuration: Dictionary mapping strings to variants.
-
       Returns the new created setting object-path.
     -->
     <method name="Create">
@@ -92,9 +88,8 @@
   </interface>
 
   <!--
-    org.blackox.Loom.Setting
+    org.blackox.Loom.Setting:
     @short_description: Information about setting configuration.
-
     Interface for setting objects
     <literal>/org/blackox/Loom/Setting</literal>.
   -->
@@ -112,9 +107,8 @@
   </interface>
 
   <!--
-    org.blackox.Loom.Connections
+    org.blackox.Loom.Connections:
     @short_description: Managing connections.
-
     Interface for top-level connections singelton object
     <literal>/org/blackox/Loom/Connections</literal>.
   -->
@@ -128,7 +122,6 @@
       Create a new connection.
       @interface: Interface object-path.
       @setting: Setting object-path.
-
       Return new created connection object-path.
     -->
     <method name="Create">
@@ -163,9 +156,8 @@
   </interface>
 
   <!--
-    org.blackox.Loom.Connection
+    org.blackox.Loom.Connection:
     @short_description: Information about connection.
-
     Interface for connection objects
     <literal>/org/blackox/Loom/Connection</literal>.
   -->

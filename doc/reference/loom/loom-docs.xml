@@ -7,7 +7,7 @@
 <book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
   <bookinfo>
     <title>Loom Reference Manual</title>
-    <releaseinfo>for Loom</releaseinfo>
+    <releaseinfo>for Loom &version;</releaseinfo>
 
     <copyright>
       <year>2014</year>
@@ -36,18 +36,46 @@
       </para>
     </legalnotice>
 
-    </bookinfo>
+  </bookinfo>
 
-  <part id="loom">
-    <title>Loom Overview</title>
+  <part id="loom-base">
+    <title>Loom Reference</title>
 
     <partintro>
 
     <para>
-    Lorem Ipsum ...
+      Loom is yet another network manager for GNU/Linux with a easy to use 
+      <ulink type="http" url="http:///dbus.freedesktop.org">DBus</ulink>
+      Interface.
+      User <emphasis>root</emphasis> and users of group
+      <emphasis>netdev</emphasis> are allowed to introspect, send and receive
+      methods, emit and watch signals.
     </para>
 
     </partintro>
+
+  </part>
+
+  <part id="loom-dbus">
+    <title>Loom DBus Interface</title>
+
+    <chapter>
+      <title>Loom Interfaces</title>
+      <xi:include href="../../../loom-generated-doc-org.blackox.Loom.Interfaces.xml"/>
+      <xi:include href="../../../loom-generated-doc-org.blackox.Loom.Interface.xml"/>
+    </chapter>
+
+    <chapter>
+      <title>Loom Settings</title>
+      <xi:include href="../../../loom-generated-doc-org.blackox.Loom.Settings.xml"/>
+      <xi:include href="../../../loom-generated-doc-org.blackox.Loom.Setting.xml"/>
+    </chapter>
+
+    <chapter>
+      <title>Loom Connections</title>
+      <xi:include href="../../../loom-generated-doc-org.blackox.Loom.Connections.xml"/>
+      <xi:include href="../../../loom-generated-doc-org.blackox.Loom.Connection.xml"/>
+    </chapter>
 
   </part>
 

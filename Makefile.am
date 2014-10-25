@@ -60,6 +60,6 @@ SED_SUBST = sed \
 	-e 's,[@]prefix[@],$(prefix),g' \
 	$(NULL)
 
-SUBDIRS = . po
+SUBDIRS = . po doc/reference/loom
 
 include src/daemon/Makefile-daemon.am

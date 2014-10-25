@@ -44,7 +44,10 @@ MKHTML_OPTIONS=
 
 # Extra options to supply to gtkdoc-fixref. Not normally needed.
 # e.g. FIXXREF_OPTIONS=--extra-dir=../gdk-pixbuf/html --extra-dir=../gdk/html
-FIXXREF_OPTIONS=
+FIXXREF_OPTIONS= \
+	--extra-dir=$(GLIB_PREFIX)/share/gtk-doc/html/glib \
+	--extra-dir=$(GLIB_PREFIX)/share/gtk-doc/html/gobject \
+	--extra-dir=$(GLIB_PREFIX)/share/gtk-doc/html/gio
 
 # Used for dependencies. The docs will be rebuilt if any of these change.
 # e.g. HFILE_GLOB=$(top_srcdir)/gtk/*.h
@@ -97,8 +100,8 @@ EXTRA_DIST += version.xml.in
 # and run some sanity checks
 if ENABLE_GTK_DOC
 TESTS_ENVIRONMENT = cd $(srcdir) && \
-  DOC_MODULE=$(DOC_MODULE) DOC_MAIN_SGML_FILE=$(DOC_MAIN_SGML_FILE) \
-  SRCDIR=$(abs_srcdir) BUILDDIR=$(abs_builddir)
+	DOC_MODULE=$(DOC_MODULE) DOC_MAIN_SGML_FILE=$(DOC_MAIN_SGML_FILE) \
+	SRCDIR=$(abs_srcdir) BUILDDIR=$(abs_builddir)
 #TESTS = $(GTKDOC_CHECK)
 endif
 

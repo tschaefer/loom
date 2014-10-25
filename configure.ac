@@ -122,7 +122,14 @@ fi
 AC_SUBST([dbussystemconfdir], [$dbussystemconfdir])
 AC_MSG_RESULT([$dbusservicedir, $dbussystemconfdir])
 
-GTK_DOC_CHECK([1.18],[--flavour no-tmpll])
+GLIB_PREFIX="`$PKG_CONFIG --variable=prefix glib-2.0`"
+AC_SUBST(GLIB_PREFIX)
+
+GTK_DOC_CHECK([1.20],[--flavour no-tmpl])
+
+AC_CHECK_PROG(GTKDOC, gtkdocize, true, false)
+AM_CONDITIONAL(HAVE_GTK_DOC, $GTKDOC)
+AC_SUBST(HAVE_GTK_DOC)
 
 AC_CONFIG_FILES([
   Makefile
