@@ -52,6 +52,8 @@ libloomd_a_SOURCES = \
 	src/daemon/connection.c \
 	src/daemon/tools.h \
 	src/daemon/tools.c \
+	src/daemon/wifi.h \
+	src/daemon/wifi.c \
 	$(NULL)
 
 libloomd_a_CFLAGS = \
