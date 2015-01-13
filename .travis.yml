@@ -9,7 +9,7 @@ before_install:
   - git clone https://github.com/GNOME/glib.git
   - cd glib 
   - sh autogen.sh && ./configure --prefix /usr/local
-  _ make && sudo make install
+  - make && sudo make install
   - cd
   - git clone https://github.com/thom311/libnl.git
   - cd libnl 
